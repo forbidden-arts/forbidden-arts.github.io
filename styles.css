@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+	text-decoration: none;
 }
 header
 {
@@ -212,4 +213,17 @@ header .logo
         {
           right: 200px;
         }
+	.container 
+	{
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* Two equal-sized columns */
+		grid-template-rows: 1fr 1fr 1fr; /* Three equal-sized rows */
+		grid-gap: 10px; /* Gap between columns and rows */
+		height: 400px; /* Set a fixed height for the container */
+	}
+	.item
+	{
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
 }
