@@ -229,7 +229,19 @@ main p {
 }
 
 section {
-	padding: 20%;;
+	padding: 20%;
+}
+
+.no-pad {
+	padding: 0 !important;
+}
+
+.mission-statement {
+	font-size: var(--fs-l);
+	line-height: 2em;
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
 }
 
 .bg-light{
