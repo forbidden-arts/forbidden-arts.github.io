@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
-	<title>Kalvis Studio</title>
-</head>
-<body>
-	<section class="showcase">
-		<header>
-			<a href="index.html">
-				<h2 class="logo">Kalvis Studio</h2>
-			</a>
-				<div class="toggle"></div>
-		</header>
-	<!-- <video src="./pexels-tima.mp4" muted loop autoplay></video> -->
-	<img src="./warehouse.webp">
-	<div class="overlay"></div>
-		<div class="text">
-			<h2>Forging</h2>
-			<h3 style="color: #f27405">Digital Futures</h3>
-			<p>	We are rebels, makers, and dreamers who are passionate
-				about helping companies discover opportunity, enable
-				business models, and maximize responsiveness.
-			</p>
-			<a href="contact.html">Contact</a>
-		</div>
-	<ul class="social">
-		<!-- <li><a href="#"><img src="./twitter.png"></a></li>
-		<li><a href="#"><img src="./linkedin.png"></a></li> -->
-	</ul>
-	</section>
-	<div class="menu">
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<!-- <li><a href="how_it_works.html">How It Works</a></li>
-			<li><a href="gallery.html">Gallery</a></li> -->
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</div>
-	<script>
-			const menuToggle = document.querySelector('.toggle');
-			const showcase = document.querySelector('.showcase');
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalvis Studio</title>
+  <link rel="icon" href="./static/assets/img/logos/logo-small-icon.png">
 
-			menuToggle.addEventListener('click', () => {
-				menuToggle.classList.toggle('active');
-				showcase.classList.toggle('active');
-			})
-	</script>
-</body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/styles.css">
+  <script src="https://kit.fontawesome.com/efd3f62588.js" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <div class="title-section">
+      <h1 id="page-header">Kal<span class="emph">vis</span> Studio</h1>
+      <h3 id="page-subheader">Forge your <span class="emph">future</span></h3>
+      <img src="./static/assets/img/warehouse.webp" alt="Warehourse with 18th centure interior walls flooded by light from all directions. In the center, are futuristic screens illuminating their surroundings in blue light." />
+    </div>
+    <header>
+
+      <nav class="flex primary-navigation">
+
+        <img src="static/assets/img/logos/logo_kalvis_no_bg.png" alt="Kalvis logo: Two orange swung shapes forming a bird with 'Kalvis' spelled out next to it"/>
+
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <ul id="primary-navigation" class="flex" data-visible="false">
+          <li class="nav-item" data-active="true"><a href="#/">Home</a></li>
+          <li class="nav-item" data-active="false"><a href="#/about">About</a></li>
+          <li class="nav-item" data-active="false"><a href="#/projects">Projects</a></li>
+          <li class="nav-item" data-active="false"><a href="#/contact">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="content"></main>
+    <footer>
+      <h2>
+        <span class="emph">Contact us</span>
+      </h2>
+      <div class="flex">
+
+        <table>
+        <tbody>
+          <tr>
+            <td>Email:</td><td>info&commat;kalvis.com</td>
+          </tr>
+            <td>Phone:</td><td> +358 123 123 123</td>
+          </tr>
+        </tbody>
+        </table>
+
+        <button class="contact-button"><a href="/contact">To the Form</a></button>
+
+      </div>
+      <div class="cr">
+        Copyright Kalvis &copy; <span class="year"></span>
+      </div>
+    </footer>
+    <script src="./static/js/script.js"></script>
+  </body>
 </html>
