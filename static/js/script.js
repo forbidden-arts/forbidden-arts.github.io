@@ -30,37 +30,43 @@ function initializeNavigation() {
   }
 
   // Call the function to initialize the navigation
-
-
-function loadContent() {
-	const hash = window.location.hash.slice(2); // Remove leading '#/'
-	const contentDiv = document.getElementById('content');
-
-	let filePath = '';
-	if (hash === '' || hash === '#home') {
-	  filePath = './pages/home.html';
-	} else {
-	  filePath = `./pages/${hash}.html`;
-	}
-
-	fetch(filePath)
-	  .then(response => {
-		if (!response.ok) {
-		  throw new Error('Page not found');
-		}
-		return response.text();
-	  })
-	  .then(html => {
-		contentDiv.innerHTML = html;
-		window.history.pushState({}, '', `/${hash}`);
-	  })
-	  .catch(error => {
-		contentDiv.innerHTML = `<p>${error.message}</p>`;
-	  });
-  }
-
   initializeNavigation();
 
-  // Load content when the page loads and whenever the hash changes
-  window.addEventListener('DOMContentLoaded', loadContent);
-  window.addEventListener('hashchange', loadContent);
+
+const routes = {
+    "404": `./pages/404.html`,
+    "/": "./website/pages/home.html",
+	"/website/": "./pages/home.html",
+    "/home": "./website/pages/home.html",
+	"/about": "./website/pages/about.html",
+    "/projects": "./website/pages/projects.html",
+    "/contact": "./website/pages/contact.html"
+};
+
+
+const route = (event) => {
+	  event = event || window.event;
+	  if (event.preventDefault){
+		  event.preventDefault();
+	  };
+	  const destination = event.target && event.target.href ?  event.target.href : event;
+	  window.history.pushState({}, "", destination);
+	  handleLocation();
+  }
+
+const handleLocation = async () => {
+    const path = window.location.pathname;
+    const route = routes[path] || routes["404"];
+	console.log("path", path);
+	console.log("Route", route);
+    const html = await fetch(route)
+	.then(data => {
+		console.log(data);
+		return data.text()});
+    console.log(html);
+	document.getElementById("content").innerHTML = html;
+}
+
+window.onpopstate = handleLocation;
+window.route = route;
+handleLocation();
