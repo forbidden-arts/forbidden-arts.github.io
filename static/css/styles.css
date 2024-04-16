@@ -15,6 +15,7 @@ body {
 	background: var(--col-bg-primary);
 	font-family: "Noto Sans",  sans-serif;
 	font-size: var(--fs-m);
+	overflow-x:hidden;
 }
 
 body,
@@ -229,7 +230,7 @@ main p {
 }
 
 section {
-	padding: 20%;
+	padding: max(20%, 2rem);
 }
 
 .no-pad {
@@ -273,7 +274,7 @@ section {
 
 .tri-col-section {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(3, min(250px, 1fr));
 	grid-template-rows: 1fr auto;
 	gap: 50px;
 }
@@ -285,12 +286,12 @@ section {
 
 
 .feature {
-	padding: 50px 0px 30px 50px ;
+	padding: 50px 20px 30px 50px ;
 	display: grid;
 	align-items: center;
 	align-content: center;
 	justify-content: center;
-	grid-template-columns: 1fr 5fr;
+	grid-template-columns: auto 5fr;
 	column-gap:15px;
 }
 
@@ -302,13 +303,13 @@ section {
 	grid-column: 2/4;
 }
 
-.feature-img, .feature i {
-	min-width: 20px;
+.feature img, .feature svg, .feature i {
+	min-width: 50px;
+	aspect-ratio: 1;
 	max-width: 1.5em;
 	grid-column: 1/2;
 	grid-row: 1/2;
 }
-
 
 .feature i {
 	transform: translateX(-18%)
@@ -318,10 +319,12 @@ section {
 .feature > p {
 	grid-column: 2/3;
 	width: 100%;
-	padding-right: 20px
+	padding-right:10%
 }
 
+
 @media (max-width: 1500px){
+
 	.tri-col-section {
 		grid-template-columns: 1fr 1fr
 	}
@@ -586,7 +589,4 @@ a:hover {
 		text-align: center;
 	}
 
-	.person-card img {
-
-	}
 }
