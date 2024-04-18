@@ -35,12 +35,12 @@ function initializeNavigation() {
 
 const routes = {
     "404": `./pages/404.html`,
-    "/": "./website/pages/home.html",
-	"/website/": "./pages/home.html",
-    "/home": "./website/pages/home.html",
-	"/about": "./website/pages/about.html",
-    "/projects": "./website/pages/projects.html",
-    "/contact": "./website/pages/contact.html"
+    "/": "./pages/home.html",
+	"/": "./pages/home.html",
+    "/home": "./pages/home.html",
+	"/about": "./pages/about.html",
+    "/projects": "./pages/projects.html",
+    "/contact": "./pages/contact.html"
 };
 
 
