@@ -21,7 +21,7 @@ body{
 	--fs-text:var(--fs-m);
 	--fs-subtext:var(--fs-s);
 	background: var(--col-bg-primary);
-	font-family: "Noto Sans",  sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-size: var(--size-mid);
 	overflow-x:hidden;
 }
@@ -251,11 +251,6 @@ nav, nav > *{
 
 /*  Body */
 
-main {
-	max-width: 1500px;
-	margin: 0 auto;
-}
-
 
 h2 {
 	font-size: var(--fs-section-header);
@@ -266,12 +261,17 @@ h2 {
 main section {
 	margin-top: 40px;
 	gap: 20px;
-	/* justify-content: center;
+	justify-content: center;
 	align-items: center;
-	align-content: center; */
+	align-content: center;
 	font-size: var(--fs-text);
 	line-height: 1.5em;
 }
+
+main section:not(.tri-col-section) > * {
+	max-width: 1500px;
+}
+
 
 .wide-section{
 	padding: 10%;
@@ -287,8 +287,12 @@ main p {
 }
 
 section {
-	padding-inline: max(20%, 2rem);
 	padding-block: calc(var(--fs-xl) * 2)
+}
+
+section > * {
+	width: clamp(300px - 2rem, 80%, 1500px);
+	margin-inline: auto;
 }
 
 main > section:has(+footer){
@@ -310,6 +314,12 @@ main > section:has(+footer){
 
 .mission-statement h2{
 	margin-bottom: calc(var(--fs-xl) * 2);
+}
+
+.full-bleed{
+	max-width: 100vw;
+	padding-inline: auto;
+
 }
 
 .bg-light{
@@ -369,7 +379,8 @@ main > section:has(+footer){
 	display: grid;
 	grid-template-columns: repeat(3, min(250px, 1fr));
 	grid-template-rows: 1fr auto;
-	grid-gap: 10px
+	grid-gap: 10px;
+	max-width: 1200px;
 }
 
 .tri-col-section h2 {
@@ -453,14 +464,19 @@ main > section:has(+footer){
 }
 
 .img-text-section h2 {
-	grid-column: 1/6;
+	grid-column: 1/4;
+	margin-bottom: 80px;
+}
+
+.img-text-section h2:has(+p){
+	grid-column: 3/6;
 	margin-bottom: 80px;
 }
 
 .img-text-section img.tilt {
 	min-width: 400px;
 	width: 150%;
-	max-width: 700px;
+	max-width: 850px;
 	grid-column: span 3;
 	/* perspective-origin: 10px, 10px; */
 	position: relative;
@@ -504,6 +520,7 @@ main > section:has(+footer){
 
 	.img-text-section {
 		grid-template-columns: 1fr;
+		place-items: center;
 	}
 
 	.img-text-section h2 {
@@ -523,36 +540,11 @@ main > section:has(+footer){
 
 /* two column layout*/
 
-.two-col-it {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 50px;
-}
-
 .no-overflow {
 	overflow: hidden;
 	position: relative
 }
 
-.two-col-img {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 1fr 1fr;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-}
-
-.two-col p {
-	margin: auto;
-	justify-self: center;
-	align-self: center;
-}
-
-.two-col-img > img {
-	width: 75%;
-	border-radius: 50%;
-}
 
 #azar {
 	grid-column: 2 / 4
@@ -564,20 +556,6 @@ main > section:has(+footer){
 
 #dorian {
 	grid-column: 3 / 5;
-}
-
-.two-col-text-img {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-}
-
-.two-col-text-img img {
-	min-height: 400px;
-	perspective-origin: 50px, 50px;
-	transform: translateX(-200px) scale(.8)perspective(800px) rotateY(-25deg) scaleX(0.9);
-	box-shadow:  0 50px 36px -26px hsl(0 0% 0% / 0.1),
-				 10px 29px 60px -26px hsl(0 0% 0% / 0.2);
-
 }
 
 
@@ -715,7 +693,8 @@ a:hover {
 }
 
 .parallax .wide-section{
-	padding-inline: 0
+	padding-inline: 0;
+	max-width: 1800px;
 }
 
 .parallax .img-text-section img:has(+p){
