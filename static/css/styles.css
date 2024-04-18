@@ -672,3 +672,209 @@ a:hover {
 	}
 
 }
+
+
+/* .paralax {
+	position: relative;
+	background-image: url("/website/static/assets/img/home/long-server-room.png");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	height: 300vh;
+} */
+
+.parallax p{
+	font-size: var(--fs-sub-header);
+}
+
+.parallax > section{
+	padding-inline: max(5%, 2rem);
+	position: absolute;
+}
+
+.parallax .feature{
+	border: 2px solid white;
+	box-shadow:  0 50px 50px 40px hsla(20, 89%, 45%, 0.2);
+}
+
+.parallax .wide-section{
+	padding-inline: 0
+}
+
+.parallax .img-text-section img:has(+p){
+	grid-column: 1 / 3
+}
+
+.parallax .img-text-section img{
+	grid-column: -3 / -1;
+	min-width: max(500px, 95%)
+}
+
+.parallax .img-text-section > p {
+	grid-column: span 3
+}
+
+.parallax .img-text-section > p{
+	padding-right: 0
+}
+
+.parallax .img-text-section > p:has(+img){
+	padding-left: 0;
+	margin-right: 90px;
+}
+
+@media (max-width: 1500px){
+	.parallax .img-text-section img{
+		width: max(90%, 300px);
+	}
+
+	.parallax .img-text-section > p:has(+img){
+		margin-right: 0;
+	}
+
+	.parallax .img-text-section > p{
+		margin-left: 0;
+	}
+
+}
+
+.parallax {
+	height: 400vh;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	perspective: 2px;
+  }
+
+  .parallax-layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin:0;
+	padding: 0;
+  }
+
+  .layer1 {
+	transform: translateZ(0);
+  }
+
+  .layer2 {
+	transform: translateZ(-1px);
+  }
+
+  .layer3 {
+	transform: translateZ(-3px);
+  }
+
+  .parallax-layer.layer1 {
+	height: 100%;
+	width: 100%;
+	background-color: red;
+  }
+
+  .parallax-layer.layer2 {
+	top: 10rem;
+	height: 90%;
+	width: 100%;
+	scale: 1;
+  }
+  .parallax-layer.layer3 {
+	top: 20rem;
+	height: 100%;
+	background-color: blue;
+	scale: 3;
+	z-index: -3
+  }
+
+  .parallax-layer.layer3 img{
+	height: 100%;
+
+  }
+
+
+  form{
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2em;
+  }
+
+.form-field{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2em;
+}
+
+.form-field label:has(+input[required])::before,
+.form-field label:has(+select[required])::before
+{
+	content: "*";
+	position: absolute;
+	left: -20px;
+	color: var(--col-fg-primary);
+}
+
+.form-field label::after{
+	content: ":";
+}
+
+.form-field input, .form-field select{
+	height: 2em;
+	border: none;
+	border-radius: 5px;
+	font-size: inherit;
+	color: var(--col-dark);
+}
+
+.form-field input::placeholder, .form-field select::placeholder
+{
+	opacity: 0.7;
+}
+
+
+.form-field label:has(+input[type="textarea"]){
+	align-self: flex-start
+}
+
+.form-field input[type="textarea"]{
+	height: 10em;
+}
+
+select {
+    width: 100%; /* Adjust as needed */
+    padding: 8px; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 14px; /* Font size */
+    color: #333; /* Text color */
+}
+
+/* Style the options within the select dropdown */
+select option {
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: var(--fs-text); /* Font size */
+    color: #333; /* Text color */
+    background-color: #fff; /* Background color */
+}
+
+@media (max-width: 1071px){
+	form{
+		justify-content: flex-start;
+	}
+	.form-field {
+		width: 100%;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: var(--fs-subtext)
+	}
+}
