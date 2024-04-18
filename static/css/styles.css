@@ -12,10 +12,39 @@
 	--fs-s: 18px;
 	--fs-xs: 15px;
 	--fs-xxs: 12px;
+}
+
+body{
+	--fs-primary-header:var(--fs-xxl);
+	--fs-section-header:var(--fs-xxl);
+	--fs-sub-header:var(--fs-l);
+	--fs-text:var(--fs-m);
+	--fs-subtext:var(--fs-s);
 	background: var(--col-bg-primary);
 	font-family: "Noto Sans",  sans-serif;
-	font-size: var(--fs-m);
+	font-size: var(--size-mid);
 	overflow-x:hidden;
+}
+
+
+@media (max-width: 1000px){
+	body{
+		--fs-primary-header:var(--fs-xl);
+		--fs-section-header:var(--fs-xl);
+		--fs-sub-header:var(--fs-m);
+		--fs-text:var(--fs-s);
+		--fs-subtext:var(--fs-xs);
+	}
+}
+
+@media (max-width: 450px){
+	body{
+		--fs-primary-header:calc(var(--fs-l));
+		--fs-section-header:calc(var(--fs-l));
+		--fs-sub-header:var(--fs-m);
+		--fs-text:var(--fs-s);
+		--fs-subtext:var(--fs-xs);
+	}
 }
 
 body,
@@ -32,8 +61,11 @@ img, svg {
 	color: var(--col-font);
 }
 
+svg{
+	background-color: var(--col-fg-primary);
+}
 .h3 {
-	font-size: var(--fs-l);
+	font-size: var(--fs-sub-header);
 }
 
 .emph,
@@ -70,8 +102,8 @@ nav, nav > *{
 	position: relative;
 	top:0;
 	justify-content: space-between;
-	font-size: var(--fs-m);
-	background-color: var(--col--dark);
+	font-size: var(--fs-text);
+	background-color: var(--col-dark);
 
 	& img {
 	height: 4.5em ;
@@ -131,7 +163,7 @@ nav, nav > *{
 	nav ul {
 		flex-direction: column;
 		position: fixed;
-		background-color: var(--col--dark);
+		background-color: var(--col-dark);
 		justify-content: flex-start;
 		align-content: center;
 		align-items: center;
@@ -147,7 +179,7 @@ nav, nav > *{
 
 	& li{
 		border-bottom: var(--col-font);
-		background-color: var(--col--dark);
+		background-color: var(--col-dark);
 		border-width: 1px;
 		border-block-style: none solid;
 		width:100%;
@@ -164,7 +196,7 @@ nav, nav > *{
 		width: 3rem;
 		z-index: 9999;
 		aspect-ratio: 1;
-		top: 1.25rem;
+		top: 1.25em;
 		right: 3em;
 	}
 }
@@ -186,7 +218,7 @@ nav, nav > *{
 	position: absolute;
 	left: 20%;
 	top: max(30%, 100px);
-	font-size: min(var(--fs-xxl), 30vh);
+	font-size: min(var(--fs-primary-header), 30vh);
 }
 
 #page-subheader {
@@ -224,7 +256,7 @@ main section {
 	/* justify-content: center;
 	align-items: center;
 	align-content: center; */
-	font-size: var(--fs-m);
+	font-size: var(--fs-text);
 	line-height: 1.5em;
 }
 
@@ -245,7 +277,7 @@ section {
 }
 
 .mission-statement {
-	font-size: var(--fs-l);
+	font-size: var(--fs-sub-header);
 	line-height: 2em;
 	width: 100%;
 	text-align: center;
@@ -406,7 +438,7 @@ section {
 
 .img-text-section p {
 	padding: 80px;
-	font-size: var(--fs-s);
+	font-size: var(--fs-subtext);
 	grid-column: span 2;
 }
 
@@ -430,7 +462,7 @@ section {
 
 	.img-text-section p {
 		padding-inline: 0px;
-		font-size: var(--fs-m);
+		font-size: var(--fs-text);
 	}
 
 }
@@ -505,7 +537,7 @@ footer {
 
 	background-color: var(--col--dark);
 	padding-left: 50px;
-	font-size: var(--fs-m);
+	font-size: var(--fs-text);
 }
 
 footer > h2 {
