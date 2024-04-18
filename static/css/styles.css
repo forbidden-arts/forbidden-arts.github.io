@@ -322,8 +322,7 @@ section {
 .feature {
 	padding: 50px 20px 30px 50px ;
 	display: grid;
-	align-items: center;
-	align-content: center;
+	align-items: center ;
 	justify-content: center;
 	grid-template-columns: auto 5fr;
 	column-gap:15px;
@@ -530,7 +529,7 @@ footer {
 	border-style: solid;
 	border-color: var(--col-font);
 
-	background-color: var(--col--dark);
+	background-color: var(--col-dark);
 	padding-left: 50px;
 	font-size: var(--fs-text);
 }
