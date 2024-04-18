@@ -274,7 +274,7 @@ main section:not(.tri-col-section) > * {
 
 
 .wide-section{
-	padding: 10%;
+	padding-inline: 10%;
 }
 
 .x-wide-section{
@@ -332,11 +332,13 @@ main > section:has(+footer){
 	border-radius: 20px;
 }
 
-.bg-light > *, .bg-dark > *{
+.bg-light > *:has(> *:not(:is(img, i, svg))),
+.bg-dark > *:has(> *:not(:is(img, i, svg))){
 	margin-bottom: 1em
 }
 
-.bg-light > .bg-light {
+.bg-light .bg-light,
+.bg-light img {
 	box-shadow:  0 29px 16px -26px hsl(0 0% 0% / 0.1),
 				 010px 29px 60px -26px hsl(0 0% 0% / 0.3);
 }
@@ -380,7 +382,7 @@ main > section:has(+footer){
 	grid-template-columns: repeat(3, min(250px, 1fr));
 	grid-template-rows: 1fr auto;
 	grid-gap: 10px;
-	max-width: 1200px;
+	max-width: 1800px;
 }
 
 .tri-col-section h2 {
@@ -390,12 +392,13 @@ main > section:has(+footer){
 
 
 .feature {
-	padding: 50px 20px 30px 50px ;
+	padding: 50px 20px 10px 50px ;
 	display: grid;
 	align-items: center ;
 	justify-content: center;
 	grid-template-columns: auto 5fr;
 	column-gap:15px;
+	height: 100%;
 }
 
 .feature > * {
@@ -431,7 +434,7 @@ main > section:has(+footer){
 
 	.tri-col-section {
 		grid-template-columns: 1fr 1fr;
-		gap: 50px;
+		gap: 5em;
 	}
 
 	.tri-col-section h2 {
@@ -475,7 +478,6 @@ main > section:has(+footer){
 
 .img-text-section img.tilt {
 	min-width: 400px;
-	width: 150%;
 	max-width: 850px;
 	grid-column: span 3;
 	/* perspective-origin: 10px, 10px; */
@@ -523,15 +525,20 @@ main > section:has(+footer){
 		place-items: center;
 	}
 
-	.img-text-section h2 {
+	.img-text-section h2,
+	.img-text-section h2:has(+ p) {
 		grid-column: 1/2;
 	}
+
 
 	.img-text-section img:last-of-type {
 		grid-row: 4 / 5;
 	}
 
-	.img-text-section p {
+	.img-text-section p,
+	.img-text-section p:has(+img)
+	{
+		grid-column: 1 / 2;
 		padding-inline: 0px;
 		font-size: var(--fs-text);
 	}
@@ -626,7 +633,6 @@ a:hover {
 	flex-direction: row-reverse;
 }
 
-
 .person-card img {
 	width: 250px;
 	margin-top: 35px;
@@ -668,137 +674,14 @@ a:hover {
 
 }
 
-
-/* .paralax {
-	position: relative;
-	background-image: url("/static/assets/img/home/long-server-room.png");
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
-	height: 300vh;
-} */
-
-.parallax p{
-	font-size: var(--fs-sub-header);
-}
-
-.parallax > section{
-	padding-inline: max(5%, 2rem);
-	position: absolute;
-}
-
-.parallax .feature{
-	border: 2px solid white;
-	box-shadow:  0 50px 50px 40px hsla(20, 89%, 45%, 0.2);
-}
-
-.parallax .wide-section{
-	padding-inline: 0;
-	max-width: 1800px;
-}
-
-.parallax .img-text-section img:has(+p){
-	grid-column: 1 / 3
-}
-
-.parallax .img-text-section img{
-	grid-column: -3 / -1;
-	min-width: max(500px, 95%)
-}
-
-.parallax .img-text-section > p {
-	grid-column: span 3
-}
-
-.parallax .img-text-section > p{
-	padding-right: 0
-}
-
-.parallax .img-text-section > p:has(+img){
-	padding-left: 0;
-	margin-right: 90px;
-}
-
-@media (max-width: 1500px){
-	.parallax .img-text-section img{
-		width: max(90%, 300px);
-	}
-
-	.parallax .img-text-section > p:has(+img){
-		margin-right: 0;
-	}
-
-	.parallax .img-text-section > p{
-		margin-left: 0;
-	}
-
-}
-
-.parallax {
-	height: 400vh;
-
-	overflow-x: hidden;
-	overflow-y: auto;
-
-	perspective: 2px;
-  }
-
-  .parallax-layer {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin:0;
-	padding: 0;
-  }
-
-  .layer1 {
-	transform: translateZ(0);
-  }
-
-  .layer2 {
-	transform: translateZ(-1px);
-  }
-
-  .layer3 {
-	transform: translateZ(-3px);
-  }
-
-  .parallax-layer.layer1 {
-	height: 100%;
-	width: 100%;
-	background-color: red;
-  }
-
-  .parallax-layer.layer2 {
-	top: 10rem;
-	height: 90%;
-	width: 100%;
-	scale: 1;
-  }
-  .parallax-layer.layer3 {
-	top: 20rem;
-	height: 100%;
-	background-color: blue;
-	scale: 3;
-	z-index: -3
-  }
-
-  .parallax-layer.layer3 img{
-	height: 100%;
-
-  }
-
-
-  form{
+form{
 	display: flex;
 	margin: 0 auto;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	gap: 2em;
-  }
+}
 
 .form-field{
 	position: relative;
