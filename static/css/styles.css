@@ -259,12 +259,23 @@ main section {
 	padding: 10%;
 }
 
+.x-wide-section{
+	padding: 0;
+	margin: 0;
+}
+
 main p {
 	width: min(800px, 70%);
 }
 
 section {
-	padding: max(20%, 2rem);
+	padding-inline: max(20%, 2rem);
+	padding-block: calc(var(--fs-xl) * 2)
+}
+
+main > section:has(+footer){
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .no-pad {
@@ -279,6 +290,10 @@ section {
 	box-sizing: border-box;
 }
 
+.mission-statement h2{
+	margin-bottom: calc(var(--fs-xl) * 2);
+}
+
 .bg-light{
 	background-color: var(--col-font);
 	border-radius: 30px;
@@ -286,7 +301,7 @@ section {
 
 .bg-light * {
 	color: var(--col-bg-primary) !important;
-	border-radius: 30px;
+	border-radius: 20px;
 }
 
 .bg-light > *, .bg-dark > *{
@@ -306,11 +321,37 @@ section {
 	color: var(--col-font) !important
 }
 
+.bg-transparent-00 {
+	opacity: 0;
+}
+
+.bg-transparent-20 {
+	opacity: 0.2;
+}
+
+
+.bg-transparent-40 {
+	opacity: 0.4;
+}
+
+.bg-transparent-60 {
+	opacity: 0.6;
+}
+
+.bg-transparent-80 {
+	opacity: 0.8;
+}
+
+.bg-transparent-100 {
+	opacity: 1;
+}
+
+
 .tri-col-section {
 	display: grid;
 	grid-template-columns: repeat(3, min(250px, 1fr));
 	grid-template-rows: 1fr auto;
-	gap: 50px;
+	grid-gap: 10px
 }
 
 .tri-col-section h2 {
@@ -357,10 +398,11 @@ section {
 }
 
 
-@media (max-width: 1500px){
+@media (max-width: 1700px){
 
 	.tri-col-section {
-		grid-template-columns: 1fr 1fr
+		grid-template-columns: 1fr 1fr;
+		gap: 50px;
 	}
 
 	.tri-col-section h2 {
@@ -575,6 +617,7 @@ a:hover {
 
 .person-wrapper {
 	padding: 40px 0 30px 50px;
+	margin-bottom: calc(var(--fs-sub-header) * 2);
 }
 
 .person-card {
