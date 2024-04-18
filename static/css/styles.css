@@ -1,10 +1,10 @@
-body {
+:root {
 	--col-fg-primary: hsl(20, 85%, 52%);
 	--col-bg-light: rgb(54, 82, 173);
 	--col-bg-primary: rgb(21, 8, 45);
 	--col-light-blue: rgb(233, 246, 255);
 	--col-font: hsl(0, 0%, 96%);
-	--col--dark: hsl(0, 0%, 15%);
+	--col-dark: hsl(0, 0%, 15%);
 	--fs-xxl: 60px;
 	--fs-xl: 48px;
 	--fs-l: 36px;
