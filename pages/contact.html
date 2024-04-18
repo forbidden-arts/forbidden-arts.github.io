@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+	<main class="content">
+			<h2>Contact</h2>
+			<form action="#">
+				<div class="form-field">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" placeholder="Email" required />
+				</div>
+				<div class="form-field">
+					<label for="phone">Phone</label>
+					<input type="phone" id="phone" name="phone" placeholder="Phone" />
+				</div>
+				<div class="form-field">
+					<label for="text">Topic</label>
+					<input type="text" id="text" name="text" placeholder="Topic" required />
+				</div>
+				<div class="form-field">
+					<label for="request-type">Request type</label>
+					<select id="request-type" name="request-type" required>
+						<option value="" disabled selected>Select an inquiry type</option>
+						<option value="general">General</option>
+						<option value="technical">Technical Support</option>
+						<option value="billing">Billing Inquiry</option>
+						<option value="feedback">Feedback</option>
+					</select>
+				</div>
+				<div class="form-field">
+					<label for="textarea">Request</label>
+					<input type="textarea" id="textarea" name="textarea" placeholder="How can we help you?" required />
+				</div>
+			</form>
+	</main>
+
+</body>
+</html>
