@@ -8,6 +8,14 @@ navToggle.addEventListener('click', () => {
 	primaryNav.setAttribute("aria-expanded", visibility === "true" ? "false" : "true")
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+	const toggleButton = document.querySelector('.mobile-nav-toggle');
+	const nav = document.querySelector('nav');
+
+	toggleButton.addEventListener('click', function() {
+		nav.classList.toggle('nav-expanded');
+	});
+});
 
 function initializeNavigation() {
 	const navItems = document.querySelectorAll('[data-active]');
@@ -70,10 +78,3 @@ window.onpopstate = handleLocation;
 window.route = route;
 handleLocation();
 
-// document.addEventListener("DOMContentLoaded", function() {
-// 	var header = document.querySelector('header'); // Select the header element
-// 	var headerHeight = header.offsetHeight; // Get the height of the header
-
-// 	// Set the translateY transformation to the negative value of the header's height
-// 	header.style.transform = 'translateY(-' + headerHeight + 'px)';
-// });

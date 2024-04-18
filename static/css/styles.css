@@ -35,6 +35,7 @@ body{
 		--fs-text:var(--fs-s);
 		--fs-subtext:var(--fs-xs);
 	}
+
 }
 
 @media (max-width: 450px){
@@ -97,21 +98,24 @@ header {
 nav {
 	border-width: 0 0 1px 0;
 	border-style: none none solid none;
+	min-height: 10svh;
 	width: 100%;
 }
 
 nav, nav > *{
 	position: sticky;
-	top:0;
+	top: -1px;
 	bottom:0;
 	transition: transform 0.3s ease-out;
 	justify-content: space-between;
 	font-size: var(--fs-text);
 	background-color: var(--col-dark);
 	z-index:1000;
+
 	& img {
-	height: 4.5em ;
-	margin-inline: 0.5em
+		height: 3.5em ;
+		margin-inline: 0.5em;
+		border: none;
 	}
 
 	& ul{
@@ -136,38 +140,44 @@ nav, nav > *{
 	color:transparent;
 }
 
-
-/* @media (max-width: 1570px){
-	header{
-		transform: translateY(-110px);
-		top: 118px;
+@media (orientation: portrait){
+	header img {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+		object-position: center;
 	}
-
 }
 
-@media (max-width: 1240px){
-	header{
-		transform: translateY(-320px);
-		top: 318px;
+@media (max-width: 1000px){
+	nav {
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 999;
+		background-color: var(--col-dark);
+		max-height: 10svh;
+		transition: max-height 0.3s ease-in-out;
 	}
-} */
 
-@media (max-width: 1085px){
-	header{
-		top:1007px;
-		transform: translateX(0) translateY(-1010px);
+	nav img {
+		height: 3.5em;
 	}
 
 	nav ul {
 		flex-direction: column;
-		position: fixed;
-		background-color: var(--col-dark);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
 		justify-content: flex-start;
-		align-content: center;
 		align-items: center;
-		inset: 0 0 0 30%;
+		background-color: var(--col-dark);
 		padding-top: min(20vh, 15rem);
-		transform: translateX(100%) translateY(0);
+		transform: translateX(100%);
 		transition: transform 350ms ease-out;
 	}
 
@@ -175,16 +185,13 @@ nav, nav > *{
 		transform: translateX(0%)
 	}
 
-	& li{
-		border-bottom: var(--col-font);
+	nav ul li {
+		border-bottom: 1px solid var(--col-font);
 		background-color: var(--col-dark);
-		border-width: 1px;
-		border-block-style: none solid;
-		width:100%;
+		width: 100%;
 		padding: 20px;
 		box-sizing: border-box;
 	}
-
 	.mobile-nav-toggle{
 		display: block;
 		position: absolute;
@@ -197,6 +204,11 @@ nav, nav > *{
 		top: 1.25em;
 		right: 3em;
 	}
+
+	.nav-expanded {
+		max-height: 100vh;
+	}
+
 }
 
 /* Header */
