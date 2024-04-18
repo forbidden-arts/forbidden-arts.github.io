@@ -6,12 +6,22 @@
 	<title>Kalvis Studio</title>
 	<link rel="icon" href="./static/assets/img/logos/logo-small-icon.png">
 
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./static/css/styles.css">
-<!-- <link rel="preload" href="https://via.placeholder.com/160" as="image"> -->
-<!-- <script src="https://kit.fontawesome.com/efd3f62588.js" crossorigin="anonymous"></script> -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  	<link rel="stylesheet" href="./static/css/styles.css">
+	<!-- <link rel="preload" href="https://via.placeholder.com/160" as="image"> -->
+  <!-- <script src="https://kit.fontawesome.com/efd3f62588.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
 	<header>
@@ -31,19 +41,21 @@
 			<span class="sr-only">Menu</span>
 		</button>
 
-		<ul id="primary-navigation" class="flex" data-visible="false">
-			<li class="nav-item" data-active="true"><a onClick="route()" href="/home">Home</a></li>
-			<li class="nav-item" data-active="false"><a onClick="route()" href="/about">About</a></li>
-			<li class="nav-item" data-active="false"><a onClick="route()" href="/projects">Projects</a></li>
-			<li class="nav-item" data-active="false"><a onClick="route()" href="/contact">Connect</a></li>
-		</ul>
-	</nav>
-	<main id="content"></main>
-	<footer>
-	<h2>
-		<span class="emph">Contact us</span>
-	</h2>
-	<div class="flex">
+        <ul id="primary-navigation" class="flex" data-visible="false">
+          <li class="nav-item" data-active="true"><a onClick="route()" href="/home">Home</a></li>
+          <li class="nav-item" data-active="false"><a onClick="route()" href="/about">About</a></li>
+          <li class="nav-item" data-active="false"><a onClick="route()" href="/projects">Projects</a></li>
+          <li class="nav-item" data-active="false"><a onClick="route()" href="/contact">Contact us</a></li>
+        </ul>
+      </nav>
+
+    </header>
+    <main id="content" class="flex-col"></main>
+    <footer>
+      <h2>
+        <span class="emph">Contact us</span>
+      </h2>
+      <div class="flex">
 
 		<table>
 		<tbody>
