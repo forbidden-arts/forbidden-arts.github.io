@@ -554,7 +554,6 @@ main > section:has(+footer){
 }
 
 .two-col-text-img img {
-	min-width: 400px;
 	min-height: 400px;
 	perspective-origin: 50px, 50px;
 	transform: translateX(-200px) scale(.8)perspective(800px) rotateY(-25deg) scaleX(0.9);
