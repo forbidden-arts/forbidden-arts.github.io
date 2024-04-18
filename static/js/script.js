@@ -36,7 +36,6 @@ function initializeNavigation() {
 const routes = {
     "404": `./pages/404.html`,
     "/": "./pages/home.html",
-	"/": "./pages/home.html",
     "/home": "./pages/home.html",
 	"/about": "./pages/about.html",
     "/projects": "./pages/projects.html",
@@ -70,3 +69,11 @@ const handleLocation = async () => {
 window.onpopstate = handleLocation;
 window.route = route;
 handleLocation();
+
+// document.addEventListener("DOMContentLoaded", function() {
+// 	var header = document.querySelector('header'); // Select the header element
+// 	var headerHeight = header.offsetHeight; // Get the height of the header
+
+// 	// Set the translateY transformation to the negative value of the header's height
+// 	header.style.transform = 'translateY(-' + headerHeight + 'px)';
+// });
