@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-    <title>Kalvis Studio</title>
-  	<link rel="icon" href="./static/assets/img/logos/logo-small-icon.png">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<title>Kalvis Studio</title>
+	<link rel="icon" href="./static/assets/img/logos/logo-small-icon.png">
 
-  	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  	<link rel="stylesheet" href="./static/css/styles.css">
-	<!-- <link rel="preload" href="https://via.placeholder.com/160" as="image"> -->
-  <!-- <script src="https://kit.fontawesome.com/efd3f62588.js" crossorigin="anonymous"></script> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./static/css/styles.css">
+<!-- <link rel="preload" href="https://via.placeholder.com/160" as="image"> -->
+<!-- <script src="https://kit.fontawesome.com/efd3f62588.js" crossorigin="anonymous"></script> -->
 </head>
-  <body>
-    <div class="title-section">
-      <h1 id="page-header">Kal<span class="emph">vis</span> Studio</h1>
-      <h3 id="page-subheader">Forge your <span class="emph">future</span></h3>
-      <img src="./static/assets/img/headers/warehouse.webp" alt="Warehourse with 18th centure interior walls flooded by light from all directions. In the center, are futuristic screens illuminating their surroundings in blue light." />
-    </div>
-    <header>
+<body>
+	<header>
+		<div class="title-section">
+			<h1 id="page-header">Kal<span class="emph">vis</span> Studio</h1>
+			<h3 id="page-subheader">Forge your <span class="emph">future</span></h3>
+			<img src="./static/assets/img/headers/warehouse.webp" alt="Warehouse with 18th century interior walls flooded by light from all directions. In the center, are futuristic screens illuminating their surroundings in blue light." />
+		</div>
+	</header>
+	<nav class="flex primary-navigation">
 
-      <nav class="flex primary-navigation">
-
-        <a onClick="route()" href="/home">
-		<img src="./static/assets/img/logos/logo_kalvis_no_bg.png" alt="Kalvis logo: Two orange swung shapes forming a bird with 'Kalvis' spelled out next to it"/>
+		<a onClick="route()" href="/home">
+			<img src="./static/assets/img/logos/logo_kalvis_no_bg.png" alt="Kalvis logo: Two orange swung shapes forming a bird with 'Kalvis' spelled out next to it"/>
 		</a>
 
-        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-          <span class="sr-only">Menu</span>
-        </button>
+		<button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+			<span class="sr-only">Menu</span>
+		</button>
 
-        <ul id="primary-navigation" class="flex" data-visible="false">
-          <li class="nav-item" data-active="true"><a onClick="route()" href="/home">Home</a></li>
-          <li class="nav-item" data-active="false"><a onClick="route()" href="/about">About</a></li>
-          <li class="nav-item" data-active="false"><a onClick="route()" href="/projects">Projects</a></li>
-          <li class="nav-item" data-active="false"><a onClick="route()" href="/contact">Contact us</a></li>
-        </ul>
-      </nav>
+		<ul id="primary-navigation" class="flex" data-visible="false">
+			<li class="nav-item" data-active="true"><a onClick="route()" href="/home">Home</a></li>
+			<li class="nav-item" data-active="false"><a onClick="route()" href="/about">About</a></li>
+			<li class="nav-item" data-active="false"><a onClick="route()" href="/projects">Projects</a></li>
+			<li class="nav-item" data-active="false"><a onClick="route()" href="/contact">Connect</a></li>
+		</ul>
+	</nav>
+	<main id="content"></main>
+	<footer>
+	<h2>
+		<span class="emph">Contact us</span>
+	</h2>
+	<div class="flex">
 
-    </header>
-    <main id="content"></main>
-    <footer>
-      <h2>
-        <span class="emph">Contact us</span>
-      </h2>
-      <div class="flex">
+		<table>
+		<tbody>
+		<tr>
+			<td>Email:</td><td>info&commat;kalvis.com</td>
+		</tr>
+			<td>Phone:</td><td> +358 123 123 123</td>
+		</tr>
+		</tbody>
+		</table>
 
-        <table>
-        <tbody>
-          <tr>
-            <td>Email:</td><td>info&commat;kalvis.com</td>
-          </tr>
-            <td>Phone:</td><td> +358 123 123 123</td>
-          </tr>
-        </tbody>
-        </table>
+		<button class="contact-button"><a onClick="route()" href="/contact">To the Form</a></button>
 
-        <button class="contact-button"><a onClick="route()" href="/contact">To the Form</a></button>
-
-      </div>
-      <div class="cr">
-        Copyright Kalvis &copy; <span class="year"></span>
-      </div>
-    </footer>
-    <script src="./static/js/script.js"></script>
-  </body>
+	</div>
+	<div class="cr">
+		Copyright Kalvis &copy; <span class="year"></span>
+	</div>
+	</footer>
+	<script src="./static/js/script.js"></script>
+</body>
 </html>
