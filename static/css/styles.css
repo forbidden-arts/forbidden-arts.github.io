@@ -194,19 +194,26 @@ nav, nav > *{
 	position: absolute;
 	right: 20%;
 	bottom: max(40%, 50px);
-	font-size: var(--fs-l)
+	font-size: var(--fs-sub-header)
 }
 
 .title-section img {
 	width: 100%;
-	transform: translateY(-35%);
+	/* transform: translateY(-35%); */
 	opacity: 0.38;
+	object-fit: cover;
 }
 
 /*  Body */
 
+main {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+
 h2 {
-	font-size: var(--fs-xxl);
+	font-size: var(--fs-section-header);
 	margin-bottom: 50px;
 	line-height: 1.3em;
 }
@@ -304,15 +311,16 @@ section {
 }
 
 .feature img, .feature svg, .feature i {
-	min-width: 50px;
+	min-width: 1em;
+	max-width: 2em;
 	aspect-ratio: 1;
-	max-width: 1.5em;
 	grid-column: 1/2;
 	grid-row: 1/2;
+	fill: red
 }
 
 .feature i {
-	transform: translateX(-18%)
+	transform: translateX(-18%);
 }
 
 
@@ -363,15 +371,17 @@ section {
 	margin-bottom: 80px;
 }
 
-.img-text-section img {
+.img-text-section img.tilt {
+	min-width: 400px;
 	width: 150%;
+	max-width: 700px;
 	grid-column: span 3;
 	/* perspective-origin: 10px, 10px; */
 	position: relative;
 	transform: perspective(1000px) rotateY(15deg) scaleX(0.8);
 }
 
-.img-text-section .last-img {
+.img-text-section  img.tilt:last-of-type{
 	transform: perspective(1000px) rotateY(-15deg) scaleX(0.8);
 }
 
@@ -401,6 +411,11 @@ section {
 }
 
 @media (max-width: 1500px){
+
+	.tilt{
+		transform: rotate(0) perspective(0) scale(1) !important;
+	}
+
 	.img-text-section {
 		grid-template-columns: 1fr;
 	}
@@ -409,13 +424,8 @@ section {
 		grid-column: 1/2;
 	}
 
-	.img-text-section img {
-		transform: rotate(0) perspective(0) scale(1)
-	}
-
-	.img-text-section .last-img {
+	.img-text-section img:last-of-type {
 		grid-row: 4 / 5;
-		transform: rotate(0) perspective(0) scale(1)
 	}
 
 	.img-text-section p {
@@ -470,19 +480,18 @@ section {
 	grid-column: 3 / 5;
 }
 
-.two-col-ti {
+.two-col-text-img {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 }
 
-.two-col-ti img {
+.two-col-text-img img {
 	min-width: 400px;
 	min-height: 400px;
 	perspective-origin: 50px, 50px;
-	position: relative;
 	transform: translateX(-200px) scale(.8)perspective(800px) rotateY(-25deg) scaleX(0.9);
 	box-shadow:  0 50px 36px -26px hsl(0 0% 0% / 0.1),
-	010px 29px 60px -26px hsl(0 0% 0% / 0.2);
+				 10px 29px 60px -26px hsl(0 0% 0% / 0.2);
 
 }
 
@@ -518,7 +527,7 @@ table {
 	font-size: 1.2em;
 	padding-inline: 0.8em;
 	aspect-ratio: 2.5;
-	border-radius: 20px;
+	border-radius: 15px;
 
 }
 
