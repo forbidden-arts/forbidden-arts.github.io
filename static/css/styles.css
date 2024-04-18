@@ -133,18 +133,12 @@ nav, nav > *{
 }
 
 
-@media (max-width: 1570px){
+/* @media (max-width: 1570px){
 	header{
-		transform: translateY(-120px);
+		transform: translateY(-110px);
 		top: 118px;
 	}
-}
 
-@media (max-width: 1388px){
-	header{
-		transform: translateY(-220px);
-		top: 218px;
-	}
 }
 
 @media (max-width: 1240px){
@@ -152,7 +146,7 @@ nav, nav > *{
 		transform: translateY(-320px);
 		top: 318px;
 	}
-}
+} */
 
 @media (max-width: 1085px){
 	header{
@@ -206,9 +200,10 @@ nav, nav > *{
 .title-section{
 	position: relative;
 	width: 100%;
-	display: inline-block; /* change the default display type to inline-block */
-    overflow: hidden;
 	max-height: 1000px;
+	/* display: inline-block; */
+    overflow: hidden;
+	/* max-height: 1000px; */
 	margin:0;
 }
 
