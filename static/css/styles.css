@@ -339,6 +339,8 @@ main > section:has(+footer){
 	font-size: var(--fs-sub-header);
 	line-height: 2em;
 	width: 100%;
+	margin: 0;
+	/* padding-inline: max(2rem, 10%); */
 	text-align: center;
 }
 
@@ -738,8 +740,7 @@ section.people{
 	justify-content: space-around;
 }
 
-@media (max-width: 1285px){
-
+@media (max-width: 1000px) {
 	.person-wrapper{
 		margin-inline: 0;
 		padding-inline: 2rem;
@@ -750,14 +751,27 @@ section.people{
 		flex-direction: column;
 		justify-items: center;
 		align-items: center;
+		padding: 2rem;
 		width: 100%;
 	}
 
 	.person-card .person-img{
 		text-align: center;
 	}
-
 }
+
+@media (max-width: 450px) {
+
+	section.people{
+		padding-inline: 0;
+	}
+
+
+	.person-card {
+		padding: 2rem;
+	}
+}
+
  /* Parallax */
 
 .parallax {
