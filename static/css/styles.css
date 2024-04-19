@@ -574,6 +574,32 @@ main > section:has(+footer){
 
 }
 
+@media (max-width: 450px){
+
+	.tri-col-section,
+	.wide-section{
+		width: 100%;
+		padding-inline: 0;
+	}
+
+	.tri-col-section h2 {
+			grid-column: 1 / 1;
+	}
+
+	.feature{
+		grid-column: 1 / 1;
+		grid-template-columns: 1fr;
+	}
+
+	.feature > h3{
+		grid-column: 1 / 1;
+	}
+
+	.feature > p{
+		grid-column: 1 / 1;
+	}
+}
+
 /* two column layout*/
 
 .no-overflow {
