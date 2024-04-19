@@ -297,6 +297,14 @@ main section {
 	line-height: 1.5em;
 }
 
+main section:first-of-type {
+	border-radius: 0 0 2rem 2rem;
+}
+
+main section:last-of-type {
+	border-radius: 2rem 2rem 0 0;
+}
+
 main section:not(.tri-col-section) > * {
 	max-width: 1500px;
 }
@@ -751,6 +759,65 @@ a:hover {
 	}
 
 }
+ /* Parallax */
+
+
+ .parallax-area {
+	margin: 0 !important;
+	border-radius: 0;
+ }
+
+ .parallax-area > * {
+	border-radius: 0;
+ }
+
+ section:has(+.parallax-area)
+{
+	margin-bottom: 0;
+	transform: translateY(2em);
+}
+
+.parallax-area+section {
+	margin-top: 0;
+	transform: translateY(-2em);
+}
+
+.parallax {
+	/* Full height */
+	margin: 0 !important;
+	border-radius: 0 !important;
+	height: 102vh;
+	z-index: -1;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+}
+
+.parallax+section,
+section:has(+.parallax)
+{
+	margin-block: auto;
+	border-radius: 0;
+}
+
+.parallax-1 {
+	background-image: url("../assets/img/headers/mindmap.png");
+}
+
+.parallax-2 {
+	background-image: url("../assets/img/headers/data-room.png");
+}
+
+.parallax-3 {
+	background-image: url("../assets/img/headers/unfocused-dashboard.png");
+}
+
+
+/* CONTACT FORM */
 
 form{
 	display: flex;
@@ -835,3 +902,4 @@ select option {
 		gap: var(--fs-subtext)
 	}
 }
+
