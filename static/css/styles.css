@@ -251,7 +251,6 @@ header {
 	width: 100%;
 	height: 100%;
     overflow: hidden;
-	margin:0;
 }
 
 
@@ -288,21 +287,13 @@ h2 {
 }
 
 main section {
-	margin-top: 40px;
+
 	gap: 20px;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
 	font-size: var(--fs-text);
 	line-height: 1.5em;
-}
-
-main section:first-of-type {
-	border-radius: 0 0 2rem 2rem;
-}
-
-main section:last-of-type {
-	border-radius: 2rem 2rem 0 0;
 }
 
 main section:not(.tri-col-section) > * {
@@ -361,7 +352,6 @@ main > section:has(+footer){
 
 .bg-light{
 	background-color: var(--col-font);
-	border-radius: 30px;
 }
 
 .bg-light * {
@@ -682,7 +672,6 @@ table {
 	padding-inline: 0.8em;
 	aspect-ratio: 2.5;
 	border-radius: 15px;
-
 }
 
 a:hover {
@@ -763,31 +752,7 @@ a:hover {
 }
  /* Parallax */
 
-
- .parallax-area {
-	margin: 0 !important;
-	border-radius: 0;
- }
-
- .parallax-area > * {
-	border-radius: 0;
- }
-
- section:has(+.parallax-area)
-{
-	margin-bottom: 0;
-	transform: translateY(2em);
-}
-
-.parallax-area+section {
-	margin-top: 0;
-	transform: translateY(-2em);
-}
-
 .parallax {
-	/* Full height */
-	margin: 0 !important;
-	border-radius: 0 !important;
 	height: 102vh;
 	z-index: -1;
 
@@ -799,12 +764,6 @@ a:hover {
 	background-color: transparent;
 }
 
-.parallax+section,
-section:has(+.parallax)
-{
-	margin-block: auto;
-	border-radius: 0;
-}
 
 .parallax-1 {
 	background-image: url("../assets/img/headers/mindmap.png");
@@ -874,22 +833,22 @@ form{
 }
 
 select {
-    width: 100%; /* Adjust as needed */
-    padding: 8px; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 14px; /* Font size */
-    color: #333; /* Text color */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
 }
 
 /* Style the options within the select dropdown */
 select option {
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: var(--fs-text); /* Font size */
-    color: #333; /* Text color */
-    background-color: #fff; /* Background color */
+    font-family: Arial, sans-serif;
+    font-size: var(--fs-text);
+    color: #333;
+    background-color: #fff;
 }
 
 @media (max-width: 1071px){
