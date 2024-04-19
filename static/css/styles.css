@@ -5,7 +5,7 @@
 	/* --col-bg-primary: hwb(261 3% 83%); */
 	--col-light-blue: hsl(205, 100%, 96%);
 	--col-font: hsl(0, 0%, 96%);
-	--col-dark: hsl(0, 0%, 15%);
+	--col-dark: hsl(0, 0%, 5%);
 	--fs-xxl: 60px;
 	--fs-xl: 48px;
 	--fs-l: 36px;
@@ -695,7 +695,7 @@ table {
 
 a:hover {
 	color: var(--col-bg-primary);
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .cr {
