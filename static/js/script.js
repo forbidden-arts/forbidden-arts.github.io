@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to toggle navigation visibility
 function toggleNav() {
 	const primaryNav = document.getElementById("primary-navigation");
+	const navArea = document.getElementsByTagName("nav")[0];
 	const visibility = primaryNav.getAttribute("data-visible");
 	primaryNav.setAttribute("data-visible", visibility === "true" ? "false" : "true");
 	primaryNav.setAttribute("aria-expanded", visibility === "true" ? "false" : "true");
-	primaryNav.classList.toggle('nav-expanded');
+	navArea.classList.toggle('nav-expanded');
 }
 
 // Initialize navigation items
