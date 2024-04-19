@@ -296,7 +296,7 @@ main section {
 	line-height: 1.5em;
 }
 
-main section:not(.tri-col-section) > * {
+main section:not(.tri-col-section):not(.bg-light-square) > * {
 	max-width: 1500px;
 }
 
@@ -360,12 +360,16 @@ main > section:has(+footer){
 }
 
 .bg-light-square{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	position: relative;
 	background-color: var(--col-font);
-	margin-top: 0;
 	height: 50vh;
+}
+
+.bg-light-square h1 {
+	position: absolute;
+	bottom: 10%;
+	width: 100vw;
+	text-align: center;
 }
 
 .bg-light-square * {
@@ -374,10 +378,16 @@ main > section:has(+footer){
 }
 
 .counter {
-	font-size: calc(var(--fs-xxl) * 10);
+	width: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25vw;
 	font-weight: bold;
 	color: #333;
 	transition: all 0.3s ease-in-out;
+
 }
 
 .bg-light > *:has(> *:not(:is(img, i, svg))),

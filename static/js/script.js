@@ -51,7 +51,7 @@ function initializeCounter() {
 					const endValue = counterElement.getAttribute('data-count-to');
 					const counter = new CountUp(counterElement, endValue, {
 						suffix: '%', // Append '%' to the number
-						duration: 2.5
+						duration: 3.5
 					});
 					if (!counter.error) {
 						counter.start();
