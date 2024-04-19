@@ -43,15 +43,29 @@ function initializeNavigation() {
 }
 
 function initializeCounter() {
-	const counterElements = document.querySelectorAll('.counter');
-	counterElements.forEach(element => {
-		const endValue = element.getAttribute('data-count-to');
-		const counter = new CountUp(element, endValue);
-		if (!counter.error) {
-			counter.start();
-		} else {
-			console.error('CountUp error:', counter.error);
-		}
+	const sectionsWithCounters = document.querySelectorAll('.bg-light-square');
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.querySelectorAll('.counter').forEach(counterElement => {
+					const endValue = counterElement.getAttribute('data-count-to');
+					const counter = new CountUp(counterElement, endValue, {
+						suffix: '%', // Append '%' to the number
+						duration: 3.5
+					});
+					if (!counter.error) {
+						counter.start();
+					} else {
+						console.error('CountUp error:', counter.error);
+					}
+				});
+				observer.unobserve(entry.target); // Stop observing once animated
+			}
+		});
+	}, { threshold: 1.0 }); // Trigger when 100% of the target is visible
+
+	sectionsWithCounters.forEach(section => {
+		observer.observe(section);
 	});
 }
 
