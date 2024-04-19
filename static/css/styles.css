@@ -299,7 +299,7 @@ main section {
 	line-height: 1.5em;
 }
 
-main section:not(.tri-col-section):not(.bg-light-square) > * {
+main section:not(.tri-col-section):not(.bg-counter) > * {
 	max-width: 1500px;
 }
 
@@ -363,20 +363,20 @@ main > section:has(+footer){
 	border-radius: 20px;
 }
 
-.bg-light-square{
+.bg-counter{
 	position: relative;
 	background-color: var(--col-font);
-	height: 50vh;
+	min-height: 50vh;
 }
 
-.bg-light-square h1 {
+.bg-counter h1 {
 	position: absolute;
 	bottom: 10%;
 	width: 100vw;
 	text-align: center;
 }
 
-.bg-light-square * {
+.bg-counter * {
 	color: var(--col-bg-primary) !important;
 	border-radius: 20px;
 }

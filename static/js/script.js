@@ -43,7 +43,7 @@ function initializeNavigation() {
 }
 
 function initializeCounter() {
-	const sectionsWithCounters = document.querySelectorAll('.bg-light-square');
+	const sectionsWithCounters = document.querySelectorAll('.bg-counter');
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
