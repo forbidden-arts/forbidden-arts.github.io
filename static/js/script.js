@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { CountUp } from './countUp.min.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,21 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	handleLocation();        // Handle initial page load based on the URL
 	const toggleButton = document.querySelector('.mobile-nav-toggle');
 	toggleButton.addEventListener('click', toggleNav);
-=======
-const primaryNav = document.getElementById("primary-navigation");
-
-const toggleNav = () => {
-	const nav = document.querySelector('nav');
-	nav.classList.toggle('nav-expanded');
-	const visibility =  primaryNav.getAttribute("data-visible");
-	primaryNav.setAttribute("data-visible", visibility === "true" ? "false" : "true");
-	primaryNav.setAttribute("aria-expanded", visibility === "true" ? "false" : "true");
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-	const toggleButton = document.querySelector('.mobile-nav-toggle');
-	toggleButton.addEventListener('click', toggleNav );
->>>>>>> d1ab749 (Add navbar collapsing after clicking link)
 });
 
 // Function to toggle navigation visibility
@@ -46,7 +30,6 @@ function initializeNavigation() {
 	});
 
 	navItems.forEach(item => {
-<<<<<<< HEAD
 		item.addEventListener('click', () => {
 			item.setAttribute('data-active', 'true');
 			if (activeNavItem) {
@@ -55,14 +38,6 @@ function initializeNavigation() {
 			activeNavItem = item;
 			toggleNav(); // Close the navigation when a link is clicked
 		});
-=======
-	  item.addEventListener('click', () => {
-		item.setAttribute('data-active', 'true');
-		activeNavItem.setAttribute('data-active', 'false');
-		activeNavItem = item;
-		toggleNav();
-	  });
->>>>>>> d1ab749 (Add navbar collapsing after clicking link)
 	});
 }
 
@@ -91,7 +66,6 @@ const routes = {
 
 // Function to handle routing
 const route = (event) => {
-<<<<<<< HEAD
 	event = event || window.event;
 	if (event.preventDefault) {
 		event.preventDefault();
@@ -100,34 +74,14 @@ const route = (event) => {
 	window.history.pushState({}, "", destination);
 	handleLocation();
 }
-=======
-	  event = event || window.event;
-	  if (event.preventDefault){
-		  event.preventDefault();
-	  };
-	  const destination = event.target && event.target.href ?  event.target.href : event;
-	  console.log(destination)
-	  window.history.pushState({}, "", destination);
-	  handleLocation();
-  }
->>>>>>> d1ab749 (Add navbar collapsing after clicking link)
 
 // Function to update the content based on the route
 const handleLocation = async () => {
-<<<<<<< HEAD
 	const path = window.location.pathname;
 	const route = routes[path] || routes["404"];
 	const html = await fetch(route).then(data => data.text());
 	document.getElementById("content").innerHTML = html;
 	initializeCounter(); // Initialize counters on the new page
-=======
-    const path = window.location.pathname;
-    const route = routes[path] || routes["404"];
-	const html = await fetch(route)
-	.then(data => {
-		return data.text()});
-		document.getElementById("content").innerHTML = html;
->>>>>>> d1ab749 (Add navbar collapsing after clicking link)
 }
 
 window.onpopstate = handleLocation;
