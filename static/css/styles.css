@@ -361,6 +361,25 @@ main > section:has(+footer){
 	border-radius: 20px;
 }
 
+.bg-light-square{
+	background-color: var(--col-font);
+	margin-top: 0;
+}
+
+.bg-light-square * {
+	color: var(--col-bg-primary) !important;
+	border-radius: 20px;
+}
+
+.counter {
+	display: block;
+	min-height: 50px;
+	font-size: 48px;
+	font-weight: bold;
+	color: #333;
+	transition: all 0.3s ease-in-out;
+}
+
 .bg-light > *:has(> *:not(:is(img, i, svg))),
 .bg-dark > *:has(> *:not(:is(img, i, svg))){
 	margin-bottom: 1em
