@@ -370,8 +370,12 @@ main > section:has(+footer){
 }
 
 .bg-light-square{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--col-font);
 	margin-top: 0;
+	height: 50vh;
 }
 
 .bg-light-square * {
@@ -380,9 +384,7 @@ main > section:has(+footer){
 }
 
 .counter {
-	display: block;
-	min-height: 50px;
-	font-size: 48px;
+	font-size: calc(var(--fs-xxl) * 10);
 	font-weight: bold;
 	color: #333;
 	transition: all 0.3s ease-in-out;
