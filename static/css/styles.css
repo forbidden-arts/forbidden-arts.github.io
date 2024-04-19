@@ -56,10 +56,14 @@ h4, h5, h6,
 img, svg {
 	margin: 0;
 	padding: 0;
+	border: 0;
 	list-style-type: none;
 	text-decoration: none;
-	border: 0;
 	color: var(--col-font);
+}
+
+*:not(section){
+	box-sizing: border-box;
 }
 
 svg{
@@ -177,7 +181,7 @@ nav, nav > *{
 		background-color: var(--col-dark);
 		width: 100%;
 		padding: 20px;
-		box-sizing: border-box;
+
 	}
 
 	nav ul li:last-child {
@@ -238,7 +242,6 @@ nav, nav > *{
 
 header {
 	top: 0px;
-	box-sizing: border-box;
 	height: 100vh;
 }
 
@@ -337,7 +340,6 @@ main > section:has(+footer){
 	line-height: 2em;
 	width: 100%;
 	text-align: center;
-	box-sizing: border-box;
 }
 
 .mission-statement h2{
@@ -417,7 +419,7 @@ main > section:has(+footer){
 	display: grid;
 	grid-template-columns: repeat(3, min(250px, 1fr));
 	grid-template-rows: 1fr auto;
-	grid-gap: 10px;
+	grid-gap: 1rem;
 	max-width: 1800px;
 }
 
@@ -462,7 +464,7 @@ main > section:has(+footer){
 .feature > p {
 	grid-column: 2/3;
 	width: 100%;
-	padding-right:10%
+	padding-right:10%;
 }
 
 
@@ -470,7 +472,7 @@ main > section:has(+footer){
 
 	.tri-col-section {
 		grid-template-columns: 1fr 1fr;
-		gap: 5em;
+		gap: 3em;
 	}
 
 	.tri-col-section h2 {
@@ -480,6 +482,9 @@ main > section:has(+footer){
 	.tri-col-section .feature{
 		grid-column: span 2;
 		grid-row: span 1;
+		gap: 1em;
+		margin-inline: 1rem;
+		width: calc(100% - 2rem);
 	}
 
 	.tri-col-section:nth-child(2){
@@ -579,15 +584,16 @@ main > section:has(+footer){
 		font-size: var(--fs-text);
 	}
 
-}
-
-@media (max-width: 450px){
-
 	.tri-col-section,
 	.wide-section{
 		width: 100%;
 		padding-inline: 0;
 	}
+
+
+}
+
+@media (max-width: 450px){
 
 	.tri-col-section h2 {
 			grid-column: 1 / 1;
@@ -677,10 +683,14 @@ a:hover {
 
 /* Person card */
 
+section.people{
+	padding: 2rem;
+}
 
 .person-wrapper {
 	padding: 40px 0 30px 50px;
 	margin-bottom: calc(var(--fs-sub-header) * 2);
+	padding: 2rem;
 }
 
 .person-card {
@@ -688,6 +698,7 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 	gap: 50px;
+
 }
 
 .person-card-right {
@@ -709,11 +720,11 @@ a:hover {
 	gap:20px;
 }
 
-.bg-dark .person-img img {
+.bg-dark > .person-img img {
 	box-shadow: 0 0 60px 2px hsl(20 85% 52% / 0.5);
 }
 
-.bg-light .person-img img {
+.bg-light > .person-img img {
 	box-shadow: 0 0 60px 2px hsl(261 70% 10% / 0.7);
 }
 
@@ -728,9 +739,18 @@ a:hover {
 }
 
 @media (max-width: 1285px){
+
+	.person-wrapper{
+		margin-inline: 0;
+		padding-inline: 2rem;
+		width: 100%;
+	}
+
 	.person-card {
 		flex-direction: column;
 		justify-items: center;
+		align-items: center;
+		width: 100%;
 	}
 
 	.person-card .person-img{
