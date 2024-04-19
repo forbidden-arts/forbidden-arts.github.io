@@ -62,7 +62,7 @@ function initializeCounter() {
 				observer.unobserve(entry.target); // Stop observing once animated
 			}
 		});
-	}, { threshold: 1.0 }); // Trigger when 100% of the target is visible
+	}, { threshold: .75 }); // Trigger when 100% of the target is visible
 
 	sectionsWithCounters.forEach(section => {
 		observer.observe(section);
