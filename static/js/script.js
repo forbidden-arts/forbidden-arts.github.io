@@ -1,20 +1,16 @@
-const primaryNav = document.getElementById("primary-navigation")
-const navToggle = document.querySelector(".mobile-nav-toggle")
+const primaryNav = document.getElementById("primary-navigation");
 
-
-navToggle.addEventListener('click', () => {
-	const visibility =  primaryNav.getAttribute("data-visible");
-	primaryNav.setAttribute("data-visible", visibility === "true" ? "false" : "true")
-	primaryNav.setAttribute("aria-expanded", visibility === "true" ? "false" : "true")
-})
-
-document.addEventListener('DOMContentLoaded', function() {
-	const toggleButton = document.querySelector('.mobile-nav-toggle');
+const toggleNav = () => {
 	const nav = document.querySelector('nav');
+	nav.classList.toggle('nav-expanded');
+	const visibility =  primaryNav.getAttribute("data-visible");
+	primaryNav.setAttribute("data-visible", visibility === "true" ? "false" : "true");
+	primaryNav.setAttribute("aria-expanded", visibility === "true" ? "false" : "true");
+}
 
-	toggleButton.addEventListener('click', function() {
-		nav.classList.toggle('nav-expanded');
-	});
+document.addEventListener('DOMContentLoaded', () => {
+	const toggleButton = document.querySelector('.mobile-nav-toggle');
+	toggleButton.addEventListener('click', toggleNav );
 });
 
 function initializeNavigation() {
@@ -33,6 +29,7 @@ function initializeNavigation() {
 		item.setAttribute('data-active', 'true');
 		activeNavItem.setAttribute('data-active', 'false');
 		activeNavItem = item;
+		toggleNav();
 	  });
 	});
   }
@@ -57,6 +54,7 @@ const route = (event) => {
 		  event.preventDefault();
 	  };
 	  const destination = event.target && event.target.href ?  event.target.href : event;
+	  console.log(destination)
 	  window.history.pushState({}, "", destination);
 	  handleLocation();
   }
@@ -64,14 +62,10 @@ const route = (event) => {
 const handleLocation = async () => {
     const path = window.location.pathname;
     const route = routes[path] || routes["404"];
-	console.log("path", path);
-	console.log("Route", route);
-    const html = await fetch(route)
+	const html = await fetch(route)
 	.then(data => {
-		console.log(data);
 		return data.text()});
-    console.log(html);
-	document.getElementById("content").innerHTML = html;
+		document.getElementById("content").innerHTML = html;
 }
 
 window.onpopstate = handleLocation;
