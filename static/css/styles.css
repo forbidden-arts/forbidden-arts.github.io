@@ -1,8 +1,8 @@
 :root {
 	--col-fg-primary: hsl(20, 85%, 52%);
-	--col-bg-light: rgb(54, 82, 173);
-	--col-bg-primary: rgb(21, 8, 45);
-	--col-light-blue: rgb(233, 246, 255);
+	--col-bg-light: hsl(226, 52%, 45%);
+	--col-bg-primary: hsl(261, 70%, 10%);
+	--col-light-blue: hsl(205, 100%, 96%);
 	--col-font: hsl(0, 0%, 96%);
 	--col-dark: hsl(0, 0%, 15%);
 	--fs-xxl: 60px;
@@ -677,8 +677,12 @@ a:hover {
 	gap:20px;
 }
 
-.person-img img {
+.bg-dark .person-img img {
 	box-shadow: 0 0 60px 2px hsl(20 85% 52% / 0.5);
+}
+
+.bg-light .person-img img {
+	box-shadow: 0 0 60px 2px hsl(261 70% 10% / 0.7);
 }
 
 .person-card p{
