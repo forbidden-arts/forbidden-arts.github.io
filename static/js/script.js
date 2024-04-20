@@ -4,8 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	initializeNavigation();  // Initialize navigation links
 	initializeCounter();     // Initialize counters on the page
 	handleLocation();        // Handle initial page load based on the URL
+	initializeBanner();
+
 	const toggleButton = document.querySelector('.mobile-nav-toggle');
 	toggleButton.addEventListener('click', toggleNav);
+
+
 });
 
 // Function to toggle navigation visibility
@@ -16,7 +20,20 @@ function toggleNav() {
 	primaryNav.setAttribute("data-visible", visibility === "true" ? "false" : "true");
 	primaryNav.setAttribute("aria-expanded", visibility === "true" ? "false" : "true");
 	navArea.classList.toggle('nav-expanded');
-}
+};
+
+function addBannerAnimation(){
+
+
+	const scrollerInner = document.querySelector('.scroller-inner');
+	const scrollerContent= Array.from(scrollerInner.children);
+	scrollerContent.forEach(item => {
+
+		const duplicatedItem = item.cloneNode(true);
+		duplicatedItem.setAttribute('aria-hidden', 'true');
+		scrollerInner.appendChild(duplicatedItem);
+	});
+};
 
 // Initialize navigation items
 function initializeNavigation() {
@@ -69,6 +86,17 @@ function initializeCounter() {
 	});
 }
 
+function initializeBanner(){
+	const scrollers = document.querySelectorAll('.scroller');
+
+	if(! window.matchMedia("(prefer-reduced-motion: reduce)").matches) {
+		scrollers.forEach(scroller => {
+			scroller.setAttribute('data-animated', 'true');
+			addBannerAnimation();
+		});
+	}
+}
+
 // Router functionality
 const routes = {
 	"404": './pages/404.html',
@@ -91,13 +119,15 @@ const route = (event) => {
 }
 
 // Function to update the content based on the route
-const handleLocation = async () => {
+async function handleLocation() {
 	const path = window.location.pathname;
 	const route = routes[path] || routes["404"];
 	const html = await fetch(route).then(data => data.text());
 	document.getElementById("content").innerHTML = html;
 	initializeCounter(); // Initialize counters on the new page
+	initializeBanner();
 }
 
 window.onpopstate = handleLocation;
 window.route = route;
+
