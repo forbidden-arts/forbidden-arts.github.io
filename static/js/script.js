@@ -113,7 +113,7 @@ const route = (event) => {
 	if (event.preventDefault) {
 		event.preventDefault();
 	}
-	const destination = event.target && event.target.href ? event.target.href : event;
+	const destination = event.target && event.target.href;
 	window.history.pushState({}, "", destination);
 	handleLocation();
 }
