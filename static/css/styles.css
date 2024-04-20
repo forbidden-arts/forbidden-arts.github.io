@@ -797,7 +797,7 @@ section.people{
  /* Parallax */
 
 .parallax {
-	height: 102vh;
+	height: 102svh;
 	z-index: -1;
 
 	/* Create the parallax scrolling effect */
