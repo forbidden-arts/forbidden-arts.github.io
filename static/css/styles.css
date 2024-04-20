@@ -822,6 +822,50 @@ section.people{
 }
 
 
+/* Logo Banner */
+
+.company-logo{
+	background-color: var(--col-dark);
+	border-radius: 5px;
+	height: calc(var(--fs-section-header) * 2);
+}
+
+.scroller {
+	--gap-width: 2rem;
+	--scroll-speed: 30s;
+	max-width: 600px;
+}
+
+.scroller-inner{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: var(--gap-width);
+	padding-block: 2rem;
+}
+
+/* Progressive Enhancement: Animation */
+
+.scroller[data-animated="true"]{
+	overflow-x: hidden;
+	--webkit-mask: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+	mask: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.scroller[data-animated="true"] .scroller-inner{
+	flex-wrap: nowrap !important;
+	width: fit-content;
+	animation: scroll var(--scroll-speed) linear infinite;
+}
+
+@keyframes scroll {
+	to{
+		transform: translateX(calc(-50% - var(--gap-width) / 2 ));
+	}
+}
+
+
 /* CONTACT FORM */
 
 form{
