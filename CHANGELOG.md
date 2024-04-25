@@ -1,23 +1,17 @@
 # CHANGELOG.md
 
-## [2.0.0] - 2023-12-11
+## [1.1.2] - 2023-12-07
 
-- Added 7 new pages
 - Update dependencies
 
-## [1.0.4] - 2023-10-04
+## [1.1.1] - 2020-11-12
 
-- Update Twitter icon
-- Update dependencies
+Pricing slider integration
 
-## [1.0.2] - 2023-05-15
+## [1.1.0] - 2020-10-27
 
-- Fix issue with clients carousel
+Design improvements
 
-## [1.0.1] - 2023-05-06
-
-- Dependencies update
-
-## [1.0.0] - 2023-04-19
+## [1.0.0] - 2020-10-12
 
 First release
