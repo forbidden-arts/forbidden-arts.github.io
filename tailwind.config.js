@@ -52,6 +52,11 @@ module.exports = {
         '4xl': '2.5rem',
         '5xl': '3.25rem',
         '6xl': '4rem',
+        '5vw': '5vw',
+        '10vw': '10vw',
+        '15vw': '15vw',
+        '20vw': '20vw',
+        '25vw': '25vw',
       },
       inset: {
         full: '100%',
