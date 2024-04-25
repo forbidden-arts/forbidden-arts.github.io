@@ -1,4 +1,4 @@
-# Gray HTML
+# Open PRO HTML
 
 HTML landing page template designed by Cruip.
 
