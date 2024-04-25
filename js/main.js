@@ -53,3 +53,51 @@ document.addEventListener('alpine:init', () => {
 		},
 	}))
 })
+
+document.addEventListener('alpine:init', () => {
+	Alpine.data('carousel', () => ({
+		active: 0,
+		autorotate: true,
+		autorotateTiming: 7000,
+		items: [
+			{
+				img: 'world-user-01.jpg',
+				alt: 'Testimonial 01',
+				quote: '“ I feel grateful that Open PRO pushed me to expand my horizons and strive to accomplish more, not only in my career but in education as well.“',
+				name: 'Darya Semenova',
+				role: 'Backend Developer'
+			},
+			{
+				img: 'world-user-02.jpg',
+				alt: 'Testimonial 02',
+				quote: '“ Not only in my career but in education as well, I feel grateful that Open PRO pushed me to expand my horizons and strive to accomplish more.“',
+				name: 'Greg Sebastian',
+				role: 'Head of Design'
+			},
+			{
+				img: 'world-user-03.jpg',
+				alt: 'Testimonial 03',
+				quote: '“ I feel grateful that Open PRO pushed me to expand my horizons and strive to accomplish more, not only in my career but in education as well.“',
+				name: 'Dominik Prasad',
+				role: 'Backend Lead'
+			}
+		],
+		init() {
+			if (this.autorotate) {
+				this.autorotateInterval = setInterval(() => {
+					this.active = this.active + 1 === this.items.length ? 0 : this.active + 1
+				}, this.autorotateTiming)
+			}
+			this.$watch('active', callback => this.heightFix())
+		},
+		stopAutorotate() {
+			clearInterval(this.autorotateInterval)
+			this.autorotateInterval = null
+		},
+		heightFix() {
+			this.$nextTick(() => {
+				this.$refs.testimonials.style.height = this.$refs.testimonials.children[this.active + 1].offsetHeight + 'px'
+			})
+		}
+	}))
+})
