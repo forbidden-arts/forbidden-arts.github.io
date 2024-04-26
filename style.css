@@ -2178,6 +2178,11 @@ input[type=range]::-moz-focus-outer {
   border-color: rgb(30 41 59 / var(--tw-border-opacity));
 }
 
+.border-customOrange{
+  --tw-border-opacity: 1;
+  border-color: rgb(237 98 29 / var(--tw-border-opacity));
+}
+
 .border-opacity-25{
   --tw-border-opacity: 0.25;
 }
@@ -3014,6 +3019,11 @@ input[type=range]::-moz-focus-outer {
 
 .focus\:border-transparent:focus{
   border-color: transparent;
+}
+
+.focus\:border-customOrange:focus{
+  --tw-border-opacity: 1;
+  border-color: rgb(237 98 29 / var(--tw-border-opacity));
 }
 
 .focus\:bg-gray-200:focus{
